@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '1.0.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.junit-pioneer:junit-pioneer'
+    implementation 'org.easymock:easymock:5.6.0'
+    implementation 'org.mockito:mockito-inline:${commons.mockito.version}'
+    implementation 'org.apache.commons:commons-text:${commons.text.version}'
+    implementation 'org.openjdk.jmh:jmh-core:${commons.jmh.version}'
+    implementation 'org.openjdk.jmh:jmh-generator-annprocess:${commons.jmh.version}'
+}
+
+test {
+    useJUnitPlatform()
+}
